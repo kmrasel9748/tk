@@ -1,0 +1,185 @@
+/* mega menu list */
+      .meganizr {
+          display: block;
+          position: relative;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          z-index: 15;
+
+      }
+
+      /* a top level navigation item in the mega menu */
+      .mzr-drop {
+          list-style: none;
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+      }
+
+      /* first descendant link within a top level navigation item */
+      .mzr-drop > a {
+          position: relative;
+          display: inline-block;
+          padding: 0.5em 1em;
+          margin: 0 0 -1px 0;
+          border: 1px solid transparent;
+      }
+
+      /* focus/open states of first descendant link within a top level
+         navigation item */
+      .mzr-drop > a:focus,
+      .mzr-drop > a.open {
+          border: 1px solid #dedede;
+      }
+
+      /* open state of first descendant link within a top level
+         navigation item */
+      .mzr-drop > a.open {
+          /* background-color: #fff; */
+          border-bottom: none;
+          z-index: 1;
+      }
+
+      /* sub-navigation panel */
+      .mzr-content {
+          position: absolute ;
+          display: none ;
+          top: 2.6em ;
+          margin-top: -1px ;
+          padding: 0.5em 1em ;
+          border: 1px solid #dedede ;
+          /* background-color: #fff; */
+      }
+
+      /* sub-navigation panel open state*/
+      .mzr-content.open {
+          display: block;
+      }
+
+      /* list of items within sub-navigation panel */
+      .mzr-content ul {
+          display: block ;
+          vertical-align: top ;
+          margin: 0 1em 0 0 ;
+          padding: 0 ;
+      }
+
+      /* list item within sub-navigation panel */
+      .mzr-content li {
+          display: block ;
+          list-style-type: none ;
+          margin: 0 ;
+          padding: 0 ;
+      }
+
+      .focus-content {
+          background-color: #609513;
+      }
+
+
+
+      .mzr-content.open[aria-hidden="false"] {
+          display: block;
+          opacity: 1 !important;
+          visibility: visible!important;
+          top: 37px !important;
+      }
+      .mzr-content.open[aria-hidden="true"] {
+          display: none;
+          opacity: 0 !important;
+          visibility: hidden!important;
+      }
+
+      a.skip-link {
+          left:-999px;
+          position:absolute;
+          top:auto;
+          width:1px;
+          height:1px;
+          overflow:hidden;
+          z-index:-999;
+      }
+
+      a.skip-link:focus, a.skip-link:active {
+          color: #000;
+          background-color:#fff;
+          left: auto;
+          top: auto;
+          width: 30%;
+          height: auto;
+          overflow:auto;
+          margin: 30px 13%;
+          padding:2px;
+          border-radius: 10px;
+          border:4px solid black;
+          text-align:center;
+          font-size:1.1em;
+          z-index:9999;
+      }
+
+
+@media only screen and (max-width: 959px) {
+
+    li.col3 .drop-four-columns{
+        margin-left: 0 !important;
+    }
+    .mzr-responsive.mzr-slide > li.mzr-drop:hover > div, .mzr-responsive.mzr-slide > li.mzr-drop:hover > ul, .mzr-responsive.mzr-slide > li > ul li.mzr-drop:hover > ul, .mzr-responsive.mzr-fade > li.mzr-drop:hover > div, .mzr-responsive.mzr-fade > li.mzr-drop:hover > ul, .mzr-responsive.mzr-fade > li > ul li.mzr-drop:hover > ul{
+        top: auto !important;
+    }
+}
+
+
+
+/*background design by tt*/
+.accessibilityDesign {
+  background: #609513;
+  border: 1px solid grey;
+  float: left;
+  color:#fff!important;
+  margin:15px 0 15px 0px;
+}
+.accessibilityDesign a {
+    color:#fff;
+}
+.textSize{
+    border-right:2px solid grey;
+}
+.textSize, .textBg{
+    float: left;
+    padding: 10px;
+}
+.font-small,.font-medium,.font-large,.color-1,.color-2, .color-3, .color-4{
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.font-small{
+    font-size: 12px;
+}
+.font-medium{
+    font-size: 18px;
+}
+.font-large{
+    font-size: 25px;
+}
+
+.color-1,.color-2, .color-3, .color-4{
+    font-size: 12px;
+    border:1px solid grey;
+}
+.color-1{
+    background-color: #fff;
+    color:#000;
+}
+.color-2{
+    background-color: #cfe5fc;
+    color:#21205f;
+}
+.color-3{
+    background-color: #2f2f2f;
+    color:#ffff00;
+}
+.color-4{
+    background-color: #f7f3d6;
+    color:#000066;
+}
