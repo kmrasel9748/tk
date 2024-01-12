@@ -100,7 +100,7 @@
                 <meta property="og:image" content="" />
       
     <!-- custom accessibility start -->
-    <link rel="stylesheet" href="https://bteb.gov.bd/accessibility/css/asb.css">
+    <link rel="stylesheet" href="/accessibility/css/asb.css">
     <script src="/accessibility/js/asb.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
@@ -109,334 +109,348 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
         document.addEventListener('keyup', (event) => {
-            //var name = event.key; //var code = event.code;
-            if (event.code === "Tab") {
-                var k = 0;
-                if (event.shiftKey) {
-                    //shift+tab pressed//Code // console.log(event.target);
-                    var activeElement = document.activeElement;
-                    if (activeElement.tagName.toLowerCase() == 'button') {
-                        if (activeElement.title === 'Download Screen Reader') {
-                            $('#myModalClose').attr('id', 'myModal');
-                            $('#myModal').modal();
-                            return false;
-                        }
+          //var name = event.key; //var code = event.code;
+          if (event.code === "Tab") {
+              var k = 0;
+              if (event.shiftKey) {
+                  //shift+tab pressed//Code // console.log(event.target);
+                  var activeElement = document.activeElement;
+                  if (activeElement.tagName.toLowerCase() == 'button'){
+                    if(activeElement.title === 'Download Screen Reader'){
+                      $('#myModalClose').attr('id', 'myModal');
+                      $('#myModal').modal();
+                      return false;
                     }
-                } else {
-                    //only tab pressed //Code
-                }
+                  }
+              } else {
+                  //only tab pressed //Code
+              }
             }
-
+          
         });
-
+        
         //====================//
         // Add event listener on keydown
         var access = 0;
-        if (access === 0) {
+        if(access === 0){
             document.addEventListener('keyup', (event) => {
-                var name = event.key;
-                var code = event.code;
-                var i = 0;
-                if (code == "Tab" && i == 0) {
-                    $('#myModal').modal();
-                    i = i + 1;
-                }
-                // Alert the key name and key code on keydown
+              var name = event.key;
+              var code = event.code;
+              var i = 0;
+              if(code == "Tab" && i == 0){
+                  $('#myModal').modal();
+                  i = i + 1;
+              }
+              // Alert the key name and key code on keydown
             });
             var accessibilitypop = document.querySelector('#accessibilitypop');
-
-            function accessibility() {
-                $('#myModal').modal('hide');
-                document.getElementById("universalAccessBtn").click();
-                $('#myModal').attr('id', 'myModalClose');
-                //$('#accessibilityBar').attr('class', 'active');
-                $('#myModal').attr('tabindex', '');
-                document.getElementById("universalAccessBtn").focus();
-                $('#accessibilityBar').attr('role', 'dialog');
-                $('#universalAccessBtn').attr('tabindex', '1');
+            function accessibility(){
+                  $('#myModal').modal('hide');
+                  document.getElementById("universalAccessBtn").click();
+                  $('#myModal').attr('id', 'myModalClose');
+                  //$('#accessibilityBar').attr('class', 'active');
+                  $('#myModal').attr('tabindex', '');
+                  document.getElementById("universalAccessBtn").focus();
+                  $('#accessibilityBar').attr('role', 'dialog');
+                  $('#universalAccessBtn').attr('tabindex', '1');
             };
-
-            function accessibilitySkipToMainContent() {
-                $('#myModal').attr('tabindex', '');
-                $('#myModal').attr('id', 'myModalClose');
-                $('#notice-board-bg').attr({
-                    'aria-selected': true,
-                    'tabindex': 0
-                });
-                //$('#skip-main-content-start-here').attr({'aria-selected': true, 'tabindex': '-1'});
-                document.getElementById("skip-main-content-start-here").focus();
+            
+            function accessibilitySkipToMainContent(){
+                  $('#myModal').attr('tabindex', '');
+                  $('#myModal').attr('id', 'myModalClose');
+                  $('#notice-board-bg').attr({'aria-selected': true, 'tabindex': 0});
+                  //$('#skip-main-content-start-here').attr({'aria-selected': true, 'tabindex': '-1'});
+                  document.getElementById("skip-main-content-start-here").focus();
             }
-
-            function accessibilitymodelClose() {
-                //$('#notice-board-bg').attr('tabindex', '0');
-                $('#skip-main-content-start-here').attr('tabindex', '0');
-                $('#myModal').attr('tabindex', '');
-                $('#myModal').attr('id', 'myModalClose');
+            
+            function accessibilitymodelClose(){
+                  //$('#notice-board-bg').attr('tabindex', '0');
+                  $('#skip-main-content-start-here').attr('tabindex', '0');
+                  $('#myModal').attr('tabindex', '');
+                  $('#myModal').attr('id', 'myModalClose');
             }
-
+        
         }
-
-        function start_np() {
-            $('#start-np').attr({
-                'aria-selected': true,
-                'tabindex': 0
-            });
-            document.getElementById("start-np").focus();
+        function start_np(){
+          $('#start-np').attr({'aria-selected': true, 'tabindex': 0});
+          document.getElementById("start-np").focus();
         }
     </script>
-    <style>
-        #accessibilityBar button#universalAccessBtn {
-            border-radius: 0px !important;
-        }
-
-        #accessibilityBar {
-            top: 360px !important;
-        }
-
-        .btn-for-accessibility {
-            font-size: 13px;
-            background: local;
-        }
-
-        /*==================================
+        <style>
+            #accessibilityBar button#universalAccessBtn {
+                border-radius:0px!important;
+            }
+            #accessibilityBar{
+                top:360px!important;
+            }
+            .btn-for-accessibility{
+                font-size: 13px;
+                background: local;
+            }
+            /*==================================
          Content share css design
         ===================================*/
-        .share-text-style {
-            font-family: Hind Siliguri !important;
+        .share-text-style{
+            font-family: Hind Siliguri!important;
             color: #662D91;
             font-size: 12px;
         }
-
-        .share-title {
-            font-family: Hind Siliguri !important;
+        .share-title{
+            font-family: Hind Siliguri!important;
             color: #662D91;
             font-size: 17px;
             text-align: left;
             margin-left: 14px;
         }
-
-        .share-youtube-title {
-            font-family: Hind Siliguri !important;
+        .share-youtube-title{
+            font-family: Hind Siliguri!important;
             color: #2E2E2E;
             font-size: 9px;
             letter-spacing: 0px;
         }
-
-        .share-content-box {
+        .share-content-box{
             display: flex;
             justify-content: end;
             gap: 16px;
             text-align: center;
             align-items: end;
         }
-
         .at4-jumboshare .at4-count-container {
-            min-width: 30px !important;
-            padding-right: 0px !important;
+            min-width: 30px!important;
+            padding-right: 0px!important;
         }
-
-        .at4-jumboshare .at4-count {
-            padding-left: 0px !important;
-            padding-right: 0px !important;
-            font-size: 0 !important;
-            line-height: 0 !important;
+        .at4-jumboshare .at4-count{
+            padding-left: 0px!important;
+            padding-right: 0px!important;
+            font-size: 0!important;
+            line-height: 0!important;
         }
-
         .at4-jumboshare .at4-share-container {
-            padding-left: 10px !important;
+            padding-left: 10px!important;
         }
-
-        .at4-jumboshare table,
-        .at4-jumboshare table tr,
-        .at4-jumboshare td,
-        .at4-jumboshare table th {
-            border: none !important;
+        .at4-jumboshare table, .at4-jumboshare table tr, .at4-jumboshare td, .at4-jumboshare table th{
+            border:none !important;  
         }
-
-        .at-svc-compact {
-            display: none !important;
+        .at-svc-compact{
+            display:none !important;
         }
-        
-        .facebook_like{
-            border: 1px solid #D8D8D8;
-            padding: 2px;
-            margin-bottom: 10px;
-            height: 58px;
-            display: flex;
-            align-items: center;
-            width: 88px;
-        }
-
         /*Responsive css*/
         @media only screen and (max-width: 770px) {
             .share-content-box {
                 gap: 5px;
             }
-
-            .share-content-box img {
-                width: 15px !important;
-                height: 13px !important;
+            .share-content-box img{
+                width: 15px!important;
+                height: 13px!important;
             }
-
-            .share-content-box>div {
-                margin-right: 0px !important;
+            .share-content-box > div{
+                margin-right: 0px!important;
             }
-
-            .share-text-style {
-                font-size: 9px;
+            .share-text-style{
+                font-size: 9px;   
             }
-
-            .share-youtube-title {
+            .share-youtube-title{
                 font-size: 8px;
             }
-
             .at-mobile .at-resp-share-element .at-share-btn {
-                padding: 0px !important;
-                margin-right: 0px !important;
+                padding: 0px!important;
+                margin-right: 0px!important;
             }
-
             .share-title {
                 font-size: 10px;
             }
-
             .at4-jumboshare .at4-share-container {
-                padding-left: 3px !important;
+                padding-left: 3px!important;
             }
-
-            iframe {
-                height: 24px !important;
-            }
-        }
-    </style>
-    <style>
-        /*Addthis print hide css*/
-        @media print {
-
-            .hide-for-print,
-            #accessibilityBar,
-            #onlinePollBlock,
-            #onlineCommentBlock {
-                display: none !important;
+            iframe{
+                height: 24px!important;
             }
         }
-    </style>
+        </style>
+        <style>
+            /*Addthis print hide css*/
+            @media print {
+                .hide-for-print, #accessibilityBar, #onlinePollBlock, #onlineCommentBlock { display: none !important; }
+            }
+        </style>
     <!-- end accessibility active issues -->
     <!-- custom accessibility end -->
+
     </head>
 
-<body class="cabinet-portal-gov-bd">
+    <body class="bteb-portal-gov-bd">
     <!-- accessibility Modal -->
-    <div class="modal fade" id="myModal" role="dialog" tabindex="-1" style="display: none;margin: 5px;text-align: center;">
-        <div class="modal-dialog text-center">
+    <div class="modal fade" id="myModal" role="dialog" tabindex="-1" style="display: none;margin: -10px 0 8px 0;text-align: center;">
+            <div class="modal-dialog text-center" >
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-body">
-                    <button class="btn-for-accessibility" data-dismiss="modal" onclick="accessibilitymodelClose()">Skip to main content</button>
-                    <button class="btn-for-accessibility" id="accessibilitypop" onclick="accessibility()">Go to accessibility menu</button>
-                    <button class="btn-for-accessibility close" type="button" data-dismiss="modal" onclick="accessibilitymodelClose()">&times;</button>
+                <button class="btn-for-accessibility"  data-dismiss="modal" onclick="accessibilitymodelClose()">Skip to main content</button>
+                <button class="btn-for-accessibility" id="accessibilitypop" onclick="accessibility()">Go to accessibility menu</button>
+                <button class="btn-for-accessibility close"  type="button" data-dismiss="modal" onclick="accessibilitymodelClose()">&times;</button>
                 </div>
             </div>
-
+            
+            </div>
         </div>
-    </div>
-    <!--   -->
+        <!--   -->
     <!-- ====== start jump to selections ======   -->
-    <a class="skip-link" href="/accessibility.html" target="_blank">Accessibility Help</a>
-    <a class="skip-link" href="#jmenu">Jump to Menu</a>
-    <a class="skip-link" href="#contents">Jump to Content</a>
-    <a class="skip-link" href="#search">Jump to Search</a>
-    <a class="skip-link" href="#btnLang">Jump to Language</a>
-    <!-- ====== End jump to selections ======   -->
+        <a class="skip-link" href="/accessibility.html" target="_blank">Accessibility Help</a>
+        <a class="skip-link" href="#jmenu">Jump to Menu</a>
+        <a class="skip-link" href="#contents">Jump to Content</a>
+        <a class="skip-link" href="#search">Jump to Search</a>
+        <a class="skip-link" href="#btnLang">Jump to Language</a>
+        <!-- ====== End jump to selections ======   -->
 
 
-    <div class="container inner-page">
+        <div class="container inner-page">
         <div id="start-np" autofocus="autofocus" style="opacity:0;font-size:1px;position: absolute;" aria-selected="true" tabindex="0">Wellcome to National Portal</div>
 
-        
-        <script src="//bangladesh.gov.bd/nav/js/obd.main.js?v=1.0.1"></script>
+            ﻿<script src="//bangladesh.gov.bd/nav/js/obd.main.js?v=1.0.1"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
 <link rel="stylesheet" media="all" type="text/css" href="//bangladesh.gov.bd/nav/css/obd.main.css">
 
-<div class="sixteen columns topbar"
-			style="">
 
-			<div style="">
-	
-				<div id="div-lang"
-                    style="">
-                    <a class="np" target="__blank" href="https://bangladesh.gov.bd">
-                   বাংলাদেশ জাতীয় তথ্য বাতায়ন                    </a>
-					<!-- <form action="/site/search"
-						style="margin: 0; padding: 0; width: 80%; float: left">
-						
-						<input style="width: 290px" id="search" name="key" value="" />
-						
-						<button class="search-btn" type="submit"
-							style="margin: 0; padding: 2px 10px" />
-						Go
-						</button>
-					</form> -->
-					<div id="div-lang-sel">
 
-						<form id="lang_form" action="/" method="post">
-                                                                            <input type="hidden" name="lang" id="lang"
-								value="en" />
-							<!--<a href="javascript:;" style="color:#fff;font-weight:normal;font-size:.7em;"
-                               onclick="return setLanguage();">English</a>-->
-							<button type="submit" style="height: 26px; padding: 4px;">English</button>
-                                            </form>
+<div class="sixteen columns"
+	style="background-color: #683091; box-shadow: 0 1px 5px #999999;height:40px;margin-top: -20px;">
+	<div style="display: inline-block;float: left;width: 960px;border-bottom: 4px solid #8bc643;">
+		<div class="slide-panel-btns" style="width: 165px;float: left;">
+							<div class="slide-panel-button" style="display: block;">
+					<!-- <i class="flaticon-menu10" style="float: left"></i> -->
+					<a style="color: white;height:100%;font-size:.9em;margin-top: 7px;" href="http://www.bangladesh.gov.bd/"
+						target="_blank">বাংলাদেশ জাতীয় তথ্য বাতায়ন</a>
+				</div>
+						</div>
+		<div id="div-lang" style="float:left;width: 795px;height: 32px;">
+			<div id="newNavigation"></div>
+			<div id="div-lang-sel" style="float: right">
 
+				<div id="search_any" style="float: left">
+					<div style="margin-top: 5px;padding: 0;float: left;">
+						<input style="width:90px;border-radius: 4px;height: 18px;" id="search_val" name="key"
+							value="" />
+						<button class="search-btn" type="button" style="margin: 0;padding: 1px 10px"
+							id="search-button">Search</button>
 					</div>
-				
+					<script>
+						// Function to redirect to Google with search query
+						function redirectToGoogle() {
+							var input = document.getElementById('search_val').value;
+							var searchQuery = encodeURIComponent(input);
+							var site_url = window.location.origin;
+							var site_link = ("https://www.google.com/search?q=" + searchQuery + " " + site_url);
+
+							if (searchQuery != '') {
+								window.open(site_link, '_blank');
+							} else {
+								alert(`যা খুঁজতে চান তা লিখুন`);
+							}
+						}
+
+						// Event listener for Enter key press
+						document.getElementById('search_val').addEventListener('keydown', function (e) {
+							if (e.key === 'Enter') {
+								redirectToGoogle();
+							}
+						});
+
+						// Event listener for search button click
+						document.getElementById('search-button').addEventListener('click', redirectToGoogle);
+					</script>
+				</div>
+
+				<div style="float: left;margin-left: 5px">
+					<form id="lang_form" action="/site/page/794bd1cc-cc47-4ba8-ab53-62b69c3c4424" method="post">
+																			<input type="hidden" name="lang" id="lang" value="en" />
+							<button type="submit" style="padding: 2px;margin-top:5px">English</button>
+												</form>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
 
 
-    <div id="mob_nav">
-      <div id="newNavigation"></div>
-    </div>
-                
-			<div id="site-info" class="clearfix">
 
-				
+<div class="sixteen columns">
+	<div class="callbacks_container" style="box-shadow: 0 1px 5px #999999;">
+		<ul class="rslides" id="front-image-slider">
+	    	<li>
+    		                        <img src="//bteb.gov.bd/sites/default/files/files/bteb.portal.gov.bd/top_banner/8fa131ac_e272_4ebf_9cd7_6d7e4275f72e/baner_ratio.jpg" alt="" width="960" height="220"/>   
+                		
+    	       	</li>
+	    	<li>
+    		                        <img src="//bteb.gov.bd/sites/default/files/files/bteb.portal.gov.bd/top_banner/79629b57_3cc9_47c0_b0cf_c8bc2f914bfd/7thMarch.jpg" alt="" width="960" height="220"/>   
+                		
+    	       	</li>
+	    	<li>
+    		                        <img src="//bteb.gov.bd/sites/default/files/files/bteb.portal.gov.bd/top_banner/7699e582_282e_47e5_b32d_ec8847a6fbc1/banner_5.jpg" alt="" width="960" height="220"/>   
+                		
+    	       	</li>
+	    	<li>
+    		                        <img src="//bteb.gov.bd/sites/default/files/files/bteb.portal.gov.bd/top_banner/a71552ad_90cd_43d7_ad29_6a030f6276d6/dengue.jpg" alt="" width="960" height="220"/>   
+                		
+    	       	</li>
+	    	<li>
+    		                        <img src="//bteb.gov.bd/sites/default/files/files/bteb.portal.gov.bd/top_banner/403a4a7e_af19_4d61_8460_2602700b9fff/ssc_result_2022.jpg" alt="" width="960" height="220"/>   
+                		
+    	       	</li>
+	    	<li>
+    		                        <img src="//bteb.gov.bd/sites/default/files/files/bteb.portal.gov.bd/top_banner/484009f8_56fc_46fa_ae8e_6b1323af9ffa/student.jpg" alt="" width="960" height="220"/>   
+                		
+    	       	</li>
+	    	<li>
+    		                        <img src="//bteb.gov.bd/sites/default/files/files/bteb.portal.gov.bd/top_banner/34c691d6_b68d_498b_adea_b9a2a27c9fd9/myschool (1).jpg" alt="" width="960" height="220"/>   
+                		
+    	       	</li>
+	</ul><style>.rslides img{height:220px}
+.cabinet-portal-gov-bd .meganizr>li>a{font-size:18px!important}
 
-					<div id="sitelogo">
-                                        <a title="Home" href="/"><img alt="Home"
-							src="/themes/responsive_npf/img/logo/logo.png"></a>
+</style><script></script>	</div>
 
-					</div>
-					
-					<div class="clearfix" id="sitename-wrapper">
-						<span id="site-name"><a title="Home" href="/">মন্ত্রিপরিষদ বিভাগ</a></span>
-						<span id="slogan">গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</span>
-					</div>
-					<!-- /site-name-wrapper -->
 
-				</div>
-				<!-- /header-site-info-inner -->
+	<div class="header-site-info" id="header-site-info">
 
-			
+		<div>
 
-		
-        
-        <script>
+			<div id="logo">
+								<a title="Home" href="/">
+					<img alt="Home" src="/themes/responsive_npf/img/logo/logo.png">
+				</a>
+
+			</div>
+
+			<div class="clearfix" id="site-name-wrapper">
+				<span id="site-name">
+					<a title="Home" href="/">
+						বাংলাদেশ কারিগরি শিক্ষা বোর্ড					</a>
+				</span>
+				<span id="slogan">
+					গণপ্রজাতন্ত্রী বাংলাদেশ সরকার				</span>
+			</div>
+			<!-- /site-name-wrapper -->
+
+		</div>
+		<!-- /header-site-info-inner -->
+
+	</div>
+
+</div>
+	﻿<script>
             /* Responsive Design*/
             $(document).ready(function () {
-                var wi = $( window ).width();
+				var wi = $( window ).width();
                 if(wi < 980){
-                    $('.mzr-responsive').slideUp();
-                    $('#jmenu .show-menu').click(function () {
-                        //$('.mzr-responsive').show();
-                        $(".mzr-responsive").slideToggle(400,"linear", function () {
+                    
+					$('#jmenu .show-menu').click(function () {
+						//$('.mzr-responsive').show();
+						$(".mzr-responsive").slideToggle(400,"linear", function () {
                             
-                        });
-                    });
-          
+						});
+					});
+		  
                     $("#jmenu a.submenu").click(function() {
                         
                       $('#jmenu a.submenu').siblings().addClass('sibling-toggle');
@@ -445,7 +459,7 @@
                       });
                       // return false;
                     });
-                } 
+                }
 
                 $('.submenu').addClass('sub-menu');
                 $('.mzr-drop').addClass('focusin-drop');
@@ -462,10 +476,24 @@
                 <div role="navigation" id="dawgdrops">
                     <ul class="meganizr mzr-slide mzr-responsive" >
                         <!-- Build The Menu -->
-                        <li class="col0 "><a title="Home" href="/" style="background-image: url(/themes/responsive_npf/img/home_dark.png);margin-top:5px;"></a></li><li class="col1 mzr-drop"><a href="#" class="submenu">প্রধানমন্ত্রী</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="/site/biography/d8b5920d-5864-4cf2-9bc2-aa5aa734ce04/মাননীয়-প্রধানমন্ত্রীর-জীবনালেখ্য">মাননীয় প্রধানমন্ত্রীর জীবনালেখ্য</a></li></ul></div></div></li><li class="col2 mzr-drop"><a href="#" class="submenu">মন্ত্রিসভা</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="site/page/0302e545-6a9f-49e4-a038-546a42751462/মাননীয়-মন্ত্রিগণ">মাননীয় মন্ত্রিগণ</a></li><li><a href="/site/page/86010b42-e912-45de-bcda-ad795ac4ba70/মাননীয়-প্রতিমন্ত্রিগণ">মাননীয় প্রতিমন্ত্রিগণ</a></li></ul></div></div></li><li class="col3 mzr-drop"><a href="#" class="submenu">কমিটিসমূহ</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="/site/view/cabinet_committee/মন্ত্রিসভা-কমিটি">মন্ত্রিসভা কমিটি</a></li><li><a href="/site/view/secretaries_committee/সচিব-কমিটি">সচিব কমিটি</a></li></ul></div></div></li><li class="col4 mzr-drop"><a href="#" class="submenu">মন্ত্রিপরিষদ সচিব</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="/site/biography/47069e3c-2886-49eb-89ca-e56b2008b2d0/জীবনালেখ্য">জীবনালেখ্য</a></li><li><a href="/site/view/cabinet_secretary/মন্ত্রিপরিষদ-সচিবগণের-তালিকা">মন্ত্রিপরিষদ সচিবগণের তালিকা</a></li></ul></div></div></li><li class="col5 mzr-drop"><a href="#" class="submenu">মন্ত্রণালয়/বিভাগ</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="/site/page/55bcf4d6-dd85-45c1-94b6-bcb06e4b1b12/45/মন্ত্রণালয়-ও-বিভাগসমূহ">মন্ত্রণালয় ও বিভাগসমূহ</a></li></ul></div></div></li><li class="col6 mzr-drop"><a href="#" class="submenu">সরকারের সচিবগণ</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="/site/page/47f5f37b-0055-453a-bf8d-faefd3ec9ef4/সরকারের-সচিবগণ">সরকারের সচিবগণ</a></li></ul></div></div></li><li class="col7 mzr-drop"><a href="#" class="submenu">জাতীয় পতাকা</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="/site/page/0549b21b-925e-46cc-9787-a4073fcad412/জাতীয়-পতাকা">জাতীয় পতাকা</a></li><li><a href="/site/notification_circular/46f766e8-6c71-4acc-80dc-05fb1fffda26/People’s-Republic-of-Bangladesh-Flag-Rules,-1972-এর-সংশোধন--(১৫-ফেব্রুয়ারি-২০২১)">People’s Republic of Bangladesh Flag Rules, 1972 এর সংশোধন  (১৫ ফেব্রুয়ারি ২০২১)</a></li><li><a href="https://cabinet.portal.gov.bd/site/page/458bed50-fd68-43ca-98fe-e8f1c300f2dd">[PEOPLE’S REPUBLIC OF BANGLADESH FLAG RULES, 1972 (Revised up to December, 2022) এর অনূদিত বাংলা পাঠ]</a></li></ul></div></div></li><li class="col8 mzr-drop"><a href="#" class="submenu">জাতীয় সংগীত</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="http://cabinet.portal.gov.bd/sites/default/files/files/cabinet.portal.gov.bd/page/e5f25d4e_f0a7_4b2a_a07c_3ec69a793516//bd_national_anthem.mp3"> জাতীয় সংগীত (অডিও)</a></li><li><a href="http://cabinet.portal.gov.bd/sites/default/files/files/cabinet.portal.gov.bd/page/33d5712c_f617_4d97_a1dc_b40ce5bc7c98/national_anthem_music_track.mp3">জাতীয় সংগীত (মিউজিক ট্র্যাক)</a></li><li><a href="/site/page/402afc7b-0b53-4675-bc31-35a9ace2fa74/জাতীয়-সংগীত-(পাঠ)">জাতীয় সংগীত (পাঠ)</a></li><li><a href="site/page/f561f268-153d-4888-91cd-42082f073b96/Musical-Notation-of-National-Anthem-of-Bangladesh">Musical Notation of National Anthem of Bangladesh</a></li></ul></div></div></li><li class="col9 mzr-drop"><a href="#" class="submenu">গ্যালারি</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="/site/view/categorized-photogallery/All/সকল গ্যালারি/ছবি">ছবি</a></li><li><a href="/site/view/vodeo_gallery/ভিডিও">ভিডিও</a></li></ul></div></div></li><li class="col10 mzr-drop"><a href="#" class="submenu">ডাউনলোড</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6> </h6><ul class="mzr-links"><li><a href="/site/page/d09373c1-fa0a-4489-adb8-114dc5624f23/ফরমসমূহ">ফরমসমূহ</a></li><li><a href="https://mopa.gov.bd/site/page/c4966175-c5f9-4b1f-a037-c45f6890f5c1">প্রয়োজনীয় ফরমসমূহ</a></li><li><a href="http://forms.gov.bd/">ফরমস্‌ পোর্টাল</a></li><li><a href="/site/page/0b51f283-53ad-4214-9987-37f16092f39d/নীতিমালা-ও-প্রকাশনা">নীতিমালা ও প্রকাশনা</a></li><li><a href="/site/page/c704af2c-d407-479a-9734-7b424abb3e92/প্রজ্ঞাপন,-পরিপত্র-এবং-অফিস-আদেশ">প্রজ্ঞাপন, পরিপত্র এবং অফিস আদেশ</a></li></ul></div><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="nolink/"></a></li></ul></div></div></li><li class="col11 "><a href="#" class="submenu"></a></li><li class="col12 "><a class="submenu" href="https://cabinet.portal.gov.bd/sites/default/files/files/cabinet.portal.gov.bd/legislative_information/e77af895_0019_49d6_a96f_93a4d657fdda/710.pdf"></a></li>                    </ul>
+                        <li class="col0 "><a title="Home" href="/" style="background-image: url(/themes/responsive_npf/img/home_dark.png);margin-top:5px;"></a></li><li class="col1 mzr-drop"><a href="#" class="submenu">আমাদের সম্পর্কে</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6> </h6><ul class="mzr-links"><li><a href="http://bteb.portal.gov.bd/site/page/e92398ac-76ee-427c-85d4-a3c6d500d725">ইতিহাস</a></li><li><a href="http://bteb.portal.gov.bd/site/page/87456cd9-b0ac-448c-a6f8-42585f74456b">অবকাঠামো</a></li><li><a href="http://bteb.portal.gov.bd/site/page/f03beeac-8402-44f9-a2ac-ea52d7c1ff6d">কার্যক্রম</a></li><li><a href="/site/view/officer_list/কর্মকর্তা-বৃন্দ-(জেষ্ঠ্যতার-ভিত্তিতে-নয়)">কর্মকর্তা বৃন্দ (জেষ্ঠ্যতার ভিত্তিতে নয়)</a></li><li><a href="/site/page/53d08c64-0c8c-4b40-8745-aa8dbb90f7e6/কর্মচারীবৃন্দ-(জেষ্ঠ্যতার-ভিত্তিতে-নয়)">কর্মচারীবৃন্দ (জেষ্ঠ্যতার ভিত্তিতে নয়)</a></li><li><a href="https://bteb.gov.bd/sites/default/files/files/bteb.portal.gov.bd/notices/bc9c7a7d_6a1b_4a78_8bd5_8a18b64a142d/7215.pdf">সকল ফোকাল পয়েন্ট</a></li><li><a href="http://bteb.portal.gov.bd/sites/default/files/files/bteb.portal.gov.bd/page/34a0070d_360b_4180_93ea_d4946900876b/Citizen%20Charter%2002.5.23.pdf">সিটিজেন চার্টার</a></li><li><a href="http://bteb.portal.gov.bd/sites/default/files/files/bteb.portal.gov.bd/page/e01325e6_1fd0_4d3f_ab80_d5c22fa4074d/Alternate%20Officers.pdf">বিভাগীয় প্রধানদের বিকল্প কর্মকর্তা</a></li></ul></div></div></li><li class="col2 mzr-drop"><a class="submenu" href="https://drive.google.com/folderview?id=0BynIJ2cATXt3NmxhWC1JTDd3RHc&amp;usp=sharing">পাঠ্যক্রম</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="http://bteb.gov.bd/site/page/6723ed9b-94d5-41a9-80cf-54a3594a171e">ডিপ্লোমা পর্যায়</a></li><li><a href="http://bteb.gov.bd/site/page/6723ed9b-94d5-41a9-80cf-54a3594a171e">এইচ এস সি পর্যায়</a></li><li><a href="http://bteb.gov.bd/site/page/6723ed9b-94d5-41a9-80cf-54a3594a171e">এস,এস,সি পর্যায়</a></li><li><a href="http://bteb.gov.bd/site/page/6723ed9b-94d5-41a9-80cf-54a3594a171e">সল্প মেয়াদী ও অন্যান্য</a></li></ul></div></div></li><li class="col3 mzr-drop"><a href="#" class="submenu">শিক্ষকদের তথ্য</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="http://103.197.207.70:8666/dip_teacher/index.php">ডিপ্লোমা লেভেল</a></li><li><a href="http://103.197.207.70:8666/hscbmvoc_teacher/">এইচ এস সি লেভেল</a></li><li><a href="http://www.bteb.gov.bd/site/page/378c2f42-e751-4c74-b884-e97835d9fe63/Teacher-List-%E0%A6%8F%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A7%8D%E0%A6%B0%E0%A6%BF">এস এস সি লেভেল</a></li><li><a href="http://103.197.207.70:8444/basic_teacher/index.php">সল্প মেয়াদী ও অন্যান্য</a></li><li><a href="http://103.197.207.70:8444/textile_teacher/index.php">ডিপ্লোমা ইন টেক্সটাইল</a></li><li><a href="http://103.197.207.70:8444/agriculture_teacher/">ডিপ্লোমা ইন এগ্রিকালচার ও ফিসারীজ</a></li></ul></div></div></li><li class="col4 mzr-drop"><a class="submenu" href="https://drive.google.com/folderview?id=0BynIJ2cATXt3NmxhWC1JTDd3RHc&amp;usp=sharing">প্রকাশনা</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="https://bteb.portal.gov.bd/site/page/2c4c1ed1-3853-4ab3-98cd-4c005524c2eb">গবেষণা প্রতিবেদন</a></li><li><a href="https://bteb.portal.gov.bd/site/page/620d7fdf-b0e2-40c2-b193-d15efbe912ba">বার্ষিক প্রতিবেদন</a></li><li><a href="https://drive.google.com/file/d/1aA66KBB5v3_Pqqcr45kZ-ao9rV6dLPnG/view?usp=sharing">চিরঞ্জীব বঙ্গবন্ধু</a></li></ul></div></div></li><li class="col5 mzr-drop"><a class="submenu" href="http://"> রেজাল্ট </a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="http://180.211.162.102:8444/result_arch/index.php">ডিপ্লোমা ইঞ্জিনিয়ারিং</a></li><li><a href="http://180.211.162.102:8444/result_arch/index.php">ডিপ্লোমা এগ্রি</a></li><li><a href="http://www.educationboardresults.gov.bd">এইচ এস সি পর্যায়</a></li><li><a href="http://www.educationboardresults.gov.bd">বিএম/ডিকম</a></li><li><a href="http://www.educationboardresults.gov.bd">এস এস সি পর্যায়</a></li><li><a href="http://180.211.162.102:8444/result_arch/index.php">সল্পমেয়াদী ও অন্যান্য</a></li></ul></div></div></li><li class="col6 mzr-drop"><a href="#" class="submenu">ডাউনলোড</a><div class="mzr-content drop-one-columns"><div class="one-col"><h6></h6><ul class="mzr-links"><li><a href="http://bteb.gov.bd/site/page/6723ed9b-94d5-41a9-80cf-54a3594a171e">সিলেবাস/কোর্স স্ট্রাকচার/প্রবিধান</a></li><li><a href="http://www.bteb.gov.bd/site/page/4df44549-07e8-42ef-800d-4e7fe0981836">ফরমসমূহ</a></li><li><a href="http://www.bteb.gov.bd/site/page/14fc21a0-8a2d-400f-8e20-5fbd989a68f5">একাডেমিক ক্যালেন্ডার</a></li><li><a href="http://www.bteb.gov.bd/site/page/f15b9974-45a8-4b5e-aed8-8f8af4025f12">আইন/বিধি/নীতিমালা</a></li><li><a href="http://www.bteb.gov.bd/site/page/96b954f5-495a-43e4-a27b-66229f7c560a">পাঠ্যবই</a></li><li><a href="https://drive.google.com/drive/u/0/folders/1WQJigPn6otouhR5PWLE2cNawusZzW6yt">কারিগরি শিক্ষক নির্দেশিকা</a></li></ul></div></div></li><li class="col7 "><a class="submenu" href="http://bteb.portal.gov.bd/site/photogallery/434e5c4b-bcc6-4cf8-935e-bf212d9ee1b3">ফটোগ্যালারী</a></li><li class="col8 "><a class="submenu" href="http://www.btebcbt.gov.bd/">NTVQF ওয়েবসাইট</a></li><li class="col9 "><a class="submenu" href="https://bteberp.com">ই-সেবা</a></li><li class="col10 "><a class="submenu" href="http://bteb.portal.gov.bd/sites/default/files/files/bteb.portal.gov.bd/page/34a0070d_360b_4180_93ea_d4946900876b/Citizen%20Charter%2002.5.23.pdf">তথ্য প্রাপ্তির জন্য যোগাযোগ</a></li><li class="col11 "><a class="submenu" href="https://bteb.portal.gov.bd/site/page/d0f7e639-bbc0-4740-8380-55073fef0623">পলিটেকনিকসমূহ</a></li><li class="col12 "><a class="submenu" href="https://bteb.portal.gov.bd/site/page/5a0921a8-9346-4fe3-8367-9e2bd92f0021">টেকনিক্যাল স্কুল ও কলেজসমূহ</a></li><li class="col13 "><a class="submenu" href="https://bteb.gov.bd/site/page/0e48034b-1c29-4099-967e-867ea55926b9">প্রজ্ঞাপন/পরিপত্র</a></li>                    </ul>
                 </div>
             </div>
         </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         <script>
             $(document).ready(function(){
